@@ -23,4 +23,9 @@
       (if (zero? seeds)
         acc
         (let [updated-board (update-in acc [current-pit] inc)]
-          (recur (dec seeds) (inc current-pit) updated-board))))))
+          (recur (dec seeds) (next-pit current-pit) updated-board))))))
+
+(defn next-pit [current-pit]
+  (if (= 13 current-pit)
+    0
+    (inc current-pit)))

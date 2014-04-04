@@ -43,6 +43,14 @@
 
 (facts "about playing a pit"
   (fact "it should go to zero and increment the next pits"
-        (play-pit [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0] 0) => [0 1 0 0 0 0 0 0 0 0 0 0 0 0 0]
-        (play-pit [0 1 0 0 0 0 0 0 0 0 0 0 0 0 0] 1) => [0 0 1 0 0 0 0 0 0 0 0 0 0 0 0]
-        (play-pit [2 0 0 0 0 0 0 0 0 0 0 0 0 0 0] 0) => [0 1 1 0 0 0 0 0 0 0 0 0 0 0 0]))
+        (play-pit [1 1 0 0 0 0 0 0 0 0 0 0 0 0] 0) => [0 2 0 0 0 0 0 0 0 0 0 0 0 0]
+        (play-pit [0 1 1 0 0 0 0 0 0 0 0 0 0 0] 1) => [0 0 2 0 0 0 0 0 0 0 0 0 0 0]
+        (play-pit [2 0 1 0 0 0 0 0 0 0 0 0 0 0] 0) => [0 1 2 0 0 0 0 0 0 0 0 0 0 0]
+        (play-pit [2 1 1 0 0 0 0 0 0 0 0 0 0 0] 0) => [0 2 2 0 0 0 0 0 0 0 0 0 0 0]
+        (play-pit [0 0 0 0 0 0 0 0 0 0 0 0 2 0] 12) => [1 0 0 0 0 0 0 0 0 0 0 0 0 1])
+
+  (fact "next pit should circle around"
+        (next-pit 0) => 1
+        (next-pit 1) => 2
+        (next-pit 12) => 13
+        (next-pit 13) => 0))
