@@ -13,3 +13,23 @@
     (first-element '() :default) => :default
     (first-element nil :default) => :default
     (first-element (filter even? [1 3 5]) :default) => :default))
+
+
+(facts "about the initial board"
+  (fact "it should have 4 seeds in each pit"
+     (nth initial-board 0) => 4
+     (nth initial-board 1) => 4
+     (nth initial-board 2) => 4
+     (nth initial-board 3) => 4
+     (nth initial-board 4) => 4
+     (nth initial-board 5) => 4
+     (nth initial-board 7) => 4
+     (nth initial-board 8) => 4
+     (nth initial-board 9) => 4
+     (nth initial-board 10) => 4
+     (nth initial-board 11) => 4
+     (nth initial-board 12) => 4))
+
+  (fact "it should have 0 seeds in each store"
+     (nth initial-board 6) => 0
+     (nth initial-board 13) => 0)
