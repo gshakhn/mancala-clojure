@@ -2,7 +2,7 @@
 
 The project uses [Midje](https://github.com/marick/Midje/).
 
-This is a very basic implementation of mancala in clojure. One of my first projects in clojure, so it's probably not idiomatic. Fun to play with though.
+This is a not fully implemented version of mancala in clojure. One of my first projects in clojure, so it's probably not idiomatic. Fun to play with though.
 
 ## How to run the tests
 
