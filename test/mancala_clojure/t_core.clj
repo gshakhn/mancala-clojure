@@ -40,3 +40,9 @@
 
   (fact "it should have the initial board"
      (:board initial-game) => initial-board))
+
+(facts "about playing a pit"
+  (fact "it should go to zero and increment the next pits"
+        (play-pit [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0] 0) => [0 1 0 0 0 0 0 0 0 0 0 0 0 0 0]
+        (play-pit [0 1 0 0 0 0 0 0 0 0 0 0 0 0 0] 1) => [0 0 1 0 0 0 0 0 0 0 0 0 0 0 0]
+        (play-pit [2 0 0 0 0 0 0 0 0 0 0 0 0 0 0] 0) => [0 1 1 0 0 0 0 0 0 0 0 0 0 0 0]))
