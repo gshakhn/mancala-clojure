@@ -11,3 +11,5 @@
 (def initial-board
   (let [pits-for-player (seq (repeat 6 4))]
     (concat pits-for-player [0] pits-for-player [0])))
+
+(def initial-game {:turn 0 :board initial-board})

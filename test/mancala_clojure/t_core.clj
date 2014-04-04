@@ -33,3 +33,10 @@
   (fact "it should have 0 seeds in each store"
      (nth initial-board 6) => 0
      (nth initial-board 13) => 0)
+
+(facts "about the initial game"
+  (fact "it should be the first player's turn"
+     (:turn initial-game) => 0)
+
+  (fact "it should have the initial board"
+     (:board initial-game) => initial-board))
